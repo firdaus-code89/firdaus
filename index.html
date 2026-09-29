@@ -30,15 +30,19 @@
     .section{max-width:1120px;margin:auto;padding:64px 24px}.section.alt{max-width:none;background:#fff}.section-inner{max-width:1120px;margin:auto}
     .section h2{font-size:32px;letter-spacing:-.035em;margin:0 0 10px}.lead{color:var(--muted);margin:0 0 28px}
     .chips{display:flex;flex-wrap:wrap;gap:10px}.chip{padding:9px 13px;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:600}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 25px rgba(15,23,42,.04)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 25px rgba(15,23,42,.04)}
     .card h3{margin:0 0 5px;font-size:19px}.card p{margin:0;color:var(--muted);font-size:14px}.card .date{font-size:13px;color:var(--accent);font-weight:700;margin-bottom:10px}
+    .tag{display:inline-block;padding:3px 8px;background:#f1f5f9;border-radius:6px;font-size:11px;font-weight:700;color:var(--accent2);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
     .experience{display:grid;gap:18px}.role{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}.role-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.role h3{margin:0;font-size:20px}.company{font-weight:700;color:var(--accent)}.role .date{color:var(--muted);font-size:14px;white-space:nowrap}
     .role ul{margin:15px 0 0;padding-left:20px}.role li{margin:7px 0;color:#445066}
     .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0}.stat{padding:18px;border-radius:16px;background:#fff;border:1px solid var(--line)}.stat strong{display:block;font-size:28px}.stat span{font-size:13px;color:var(--muted)}
     .contact{background:var(--dark);color:#fff;border-radius:24px;padding:38px}.contact p{color:#cbd5e1}.contact .btn{background:#fff;border-color:#fff;color:var(--dark)}
     footer{padding:28px 24px;text-align:center;color:var(--muted);font-size:13px}
+    @media(max-width:900px){.grid-4{grid-template-columns:1fr 1fr}}
     @media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:48px;gap:35px}.photo-wrap{order:-1}.photo{width:230px;border-radius:24px}.grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.nav-links{display:none}.role-top{flex-direction:column;gap:4px}}
-    @media(max-width:520px){.section{padding:48px 18px}.hero{padding:42px 18px}.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}h1{font-size:44px}.hero p{font-size:17px}}
+    @media(max-width:520px){.section{padding:48px 18px}.hero{padding:42px 18px}.grid,.grid-4{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}h1{font-size:44px}.hero p{font-size:17px}}
   </style>
 </head>
 <body>
@@ -46,7 +50,7 @@
   <div class="nav-inner">
     <a class="brand" href="#">Firdaus<span>.</span></a>
     <div class="nav-links">
-      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#ai-tools">AI Tools</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -90,66 +94,96 @@
   </div>
 </section>
 
-<section class="section" id="experience">
-  <h2>Professional experience</h2>
-  <p class="lead">Enterprise delivery across PwC, TietoEvry, Capgemini and Cognizant.</p>
-  <div class="experience">
-    <article class="role">
-      <div class="role-top"><div><h3>Senior Associate II</h3><div class="company">PwC — Hyderabad</div></div><div class="date">May 2022 – Present</div></div>
-      <ul>
-        <li>Lead a team of 4 engineers delivering a Canvas App workflow for audit document review and approval.</li>
-        <li>Improve Dataverse CRUD performance using plugins and optimize Power Apps Checker findings.</li>
-        <li>Implement pagination for large data volumes and FetchXML-based querying for faster Power Automate flows.</li>
-        <li>Integrate Azure OpenAI through Power Automate to auto-summarize audit documents and reduce manual review effort.</li>
-        <li>Build Power BI dashboards aligned to stakeholder reporting requirements.</li>
-        <li>Previously delivered a 9-screen Canvas App plus Model-Driven admin app for 100+ end users.</li>
-      </ul>
-    </article>
-    <article class="role">
-      <div class="role-top"><div><h3>Senior Software Engineer — Power Platform & Power BI</h3><div class="company">TietoEvry India — Pune</div></div><div class="date">Jul 2018 – May 2022</div></div>
-      <ul>
-        <li>Led enterprise Power BI dashboard development for leadership reporting.</li>
-        <li>Delivered end-to-end solutions across Power BI, Power Apps, Power Automate, SQL Server and Forms Pro.</li>
-        <li>Built OLAP cubes and aggregated measures in AOT and embedded Power BI into Dynamics 365 ERP.</li>
-        <li>Designed SSIS pipelines for Dynamics 365 BYOD data and mentored junior engineers.</li>
-      </ul>
-    </article>
-    <article class="role">
-      <div class="role-top"><div><h3>Associate Consultant — Power BI & SSIS</h3><div class="company">Capgemini India — Pune</div></div><div class="date">Apr 2017 – Jun 2018</div></div>
-      <ul><li>Built and optimized SSIS packages for SQL Server warehousing and developed Power BI reports.</li><li>Guided new team members and received the Rising Star Award in August 2017.</li></ul>
-    </article>
-    <article class="role">
-      <div class="role-top"><div><h3>Programmer Analyst — MSBI Developer</h3><div class="company">Cognizant Technology Solutions — Pune</div></div><div class="date">Jul 2014 – Jan 2017</div></div>
-      <ul><li>Delivered an ETL-driven data warehouse using SSIS and dimensional modeling for a British Telecom managed-services client.</li><li>Developed SQL/C#.NET ETL scripts and SSRS reports.</li></ul>
-    </article>
+<!-- NEW SECTION: AI Tooling & Integration -->
+<section class="section" id="ai-tools">
+  <h2>AI Tooling &amp; Developer Acceleration</h2>
+  <p class="lead">Leveraging modern AI platforms and custom protocols integrated with Microsoft Power Platform to accelerate development, automate workflows, and enhance solution capabilities.</p>
+  <div class="grid-4">
+    <div class="card">
+      <span class="tag">AI Assistant</span>
+      <h3>Claude</h3>
+      <p>Utilized for advanced code generation, complex Power Fx logic crafting, DAX optimization, and architectural decision modeling to streamline Power Platform delivery.</p>
+    </div>
+    <div class="card">
+      <span class="tag">IDE & Development</span>
+      <h3>Cursor</h3>
+      <p>Applied for AI-native code editing, rapid prototyping of PCF (PowerApps Component Framework) controls, plugin scripts, and automated code refactoring.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Conversational AI</span>
+      <h3>ChatGPT</h3>
+      <p>Integrated with enterprise solutions via API and Power Automate for natural language document processing, automated text summaries, and user support bots.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Integration Protocol</span>
+      <h3>MCP Servers</h3>
+      <p>Connected Model Context Protocol (MCP) servers with custom Power Platform connectors to extend AI models with real-time enterprise context and Dataverse integration.</p>
+    </div>
   </div>
 </section>
 
-<section class="section alt" id="certifications">
+<section class="section alt" id="experience">
   <div class="section-inner">
-    <h2>Certifications & education</h2>
-    <div class="grid">
-      <div class="card"><div class="date">MICROSOFT</div><h3>PL-300</h3><p>Microsoft Certified: Power BI Data Analyst Associate</p></div>
-      <div class="card"><div class="date">MICROSOFT</div><h3>PL-900</h3><p>Microsoft Certified: Power Platform Fundamentals</p></div>
-      <div class="card"><div class="date">IN PROGRESS</div><h3>PL-600 & CCDV-F</h3><p>PL-600 and Claude Certified Developer – Foundations</p></div>
-      <div class="card"><div class="date">2014</div><h3>Master of Computer Applications</h3><p>Sinhgad Institute of Management, Pune University — 70%</p></div>
-      <div class="card"><div class="date">2011</div><h3>B.Sc. Computer Science</h3><p>Vivekanand College, Shivaji University — 78.00%</p></div>
+    <h2>Professional experience</h2>
+    <p class="lead">Enterprise delivery across PwC, TietoEvry, Capgemini and Cognizant.</p>
+    <div class="experience">
+      <article class="role">
+        <div class="role-top"><div><h3>Senior Associate II</h3><div class="company">PwC — Hyderabad</div></div><div class="date">May 2022 – Present</div></div>
+        <ul>
+          <li>Lead a team of 4 engineers delivering a Canvas App workflow for audit document review and approval.</li>
+          <li>Improve Dataverse CRUD performance using plugins and optimize Power Apps Checker findings.</li>
+          <li>Implement pagination for large data volumes and FetchXML-based querying for faster Power Automate flows.</li>
+          <li>Integrate Azure OpenAI through Power Automate to auto-summarize audit documents and reduce manual review effort.</li>
+          <li>Build Power BI dashboards aligned to stakeholder reporting requirements.</li>
+          <li>Previously delivered a 9-screen Canvas App plus Model-Driven admin app for 100+ end users.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <div class="role-top"><div><h3>Senior Software Engineer — Power Platform & Power BI</h3><div class="company">TietoEvry India — Pune</div></div><div class="date">Jul 2018 – May 2022</div></div>
+        <ul>
+          <li>Led enterprise Power BI dashboard development for leadership reporting.</li>
+          <li>Delivered end-to-end solutions across Power BI, Power Apps, Power Automate, SQL Server and Forms Pro.</li>
+          <li>Built OLAP cubes and aggregated measures in AOT and embedded Power BI into Dynamics 365 ERP.</li>
+          <li>Designed SSIS pipelines for Dynamics 365 BYOD data and mentored junior engineers.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <div class="role-top"><div><h3>Associate Consultant — Power BI & SSIS</h3><div class="company">Capgemini India — Pune</div></div><div class="date">Apr 2017 – Jun 2018</div></div>
+        <ul><li>Built and optimized SSIS packages for SQL Server warehousing and developed Power BI reports.</li><li>Guided new team members and received the Rising Star Award in August 2017.</li></ul>
+      </article>
+      <article class="role">
+        <div class="role-top"><div><h3>Programmer Analyst — MSBI Developer</h3><div class="company">Cognizant Technology Solutions — Pune</div></div><div class="date">Jul 2014 – Jan 2017</div></div>
+        <ul><li>Delivered an ETL-driven data warehouse using SSIS and dimensional modeling for a British Telecom managed-services client.</li><li>Developed SQL/C#.NET ETL scripts and SSRS reports.</li></ul>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="section" id="contact">
-  <div class="contact">
-    <h2>Let's connect</h2>
-    <p>For recruiter opportunities, Power Platform leadership roles, enterprise automation, Power BI or Generative AI projects.</p>
-    <div class="buttons">
-      <a class="btn" href="mailto:firdausahmed2@gmail.com">Email me</a>
-      <a class="btn" href="tel:+919890527264">Call</a>
-      <a class="btn" href="Firdaus_Bashir_Ahmed_Resume.docx" download="Firdaus_Bashir_Ahmed_Resume.docx">Resume</a>
+<section class="section" id="certifications">
+  <h2>Certifications & education</h2>
+  <div class="grid">
+    <div class="card"><div class="date">MICROSOFT</div><h3>PL-300</h3><p>Microsoft Certified: Power BI Data Analyst Associate</p></div>
+    <div class="card"><div class="date">MICROSOFT</div><h3>PL-900</h3><p>Microsoft Certified: Power Platform Fundamentals</p></div>
+    <div class="card"><div class="date">IN PROGRESS</div><h3>PL-600 & CCDV-F</h3><p>PL-600 and Claude Certified Developer – Foundations</p></div>
+    <div class="card"><div class="date">2014</div><h3>Master of Computer Applications</h3><p>Sinhgad Institute of Management, Pune University — 70%</p></div>
+    <div class="card"><div class="date">2011</div><h3>B.Sc. Computer Science</h3><p>Vivekanand College, Shivaji University — 78.00%</p></div>
+  </div>
+</section>
+
+<section class="section alt" id="contact">
+  <div class="section-inner">
+    <div class="contact">
+      <h2>Let's connect</h2>
+      <p>For recruiter opportunities, Power Platform leadership roles, enterprise automation, Power BI or Generative AI projects.</p>
+      <div class="buttons">
+        <a class="btn" href="mailto:firdausahmed2@gmail.com">Email me</a>
+        <a class="btn" href="tel:+919890527264">Call</a>
+        <a class="btn" href="Firdaus_Bashir_Ahmed_Resume.docx" download="Firdaus_Bashir_Ahmed_Resume.docx">Resume</a>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>© 2026 Firdaus Bashir Ahmed · Senior Associate II· Hyderabad, India</footer>
+<footer>© 2026 Firdaus Bashir Ahmed · Senior Associate II · Hyderabad, India</footer>
 </body>
 </html>
